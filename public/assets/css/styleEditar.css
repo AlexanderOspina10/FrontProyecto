@@ -1,0 +1,78 @@
+
+
+/* Estilo para los grupos de formulario */
+.formularioRegistro__grupo {
+    margin-bottom: 20px; /* Espacio entre grupos de formulario */
+}
+
+/* Estilo para los elementos dentro del grupo de formulario */
+.formularioRegistro__grupo-input {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo para la etiqueta del formulario */
+.formularioRegistro__label {
+    margin-right: 10px; /* Espacio entre la etiqueta y el campo de entrada */
+}
+
+/* Otros estilos para el formulario (puedes ajustar según sea necesario) */
+.formularioRegistro__validacion-estado {
+    margin-left: 10px;
+    color: red; /* Color del icono de validación */
+}
+
+.formularioRegistro__input-error {
+    color: red; /* Color del mensaje de error */
+}
+
+.productoContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+}
+
+.productoContainer label {
+    margin-right: 10px;
+}
+.servicioContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+}
+
+.servicioContainer label {
+    margin-right: 10px;
+}
+
+.formularioRegistro__grupo {
+    display: flex;
+    align-items: center;
+}
+
+.formularioRegistro__grupo-input {
+    display: flex;
+    align-items: center;
+}
+
+.formularioRegistro__separador {
+    margin: 0 10px;
+    border: none;
+    border-top: 1px solid #ccc;
+    flex-grow: 1;
+}
+
+.btn-soft-info {
+    margin-left: 10px;
+}
+
+#selectProducto {
+    width: 300px;
+    margin-right: 10px; /* Agregamos un margen derecho al menú desplegable */
+}
