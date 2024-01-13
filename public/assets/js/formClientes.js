@@ -1,9 +1,30 @@
 const formularioRegistro = document.getElementById('formularioRegistro')
 const inputs = document.querySelectorAll('#formularioRegistro input')
 
+document.getElementById('togglePassword').addEventListener('click', function() {
+    togglePasswordVisibility('password');
+});
+
+document.getElementById('toggleConfirmPassword').addEventListener('click', function() {
+    togglePasswordVisibility('confirmarPassword');
+});
+
+function togglePasswordVisibility(inputId) {
+    var passwordInput = document.getElementById(inputId);
+    var buttonText = document.getElementById('toggle' + inputId.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase());
+
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        buttonText.textContent = 'Ocultar';
+    } else {
+        passwordInput.type = 'password';
+        buttonText.textContent = 'Mostrar';
+    }
+}
+
 const expresiones = {
 	nombreCliente: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-    documentoCliente: /^[0-9]{7,10}$/,
+    documentoCliente: /^[a-zA-Z0-9]{7,10}$/,
 	correoCliente: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
     direccionCliente: /^[A-Za-z0-9\s#áéíóúÁÉÍÓÚüÜ.,-]+$/,
 	telefonoCliente: /^[0-9]{7,10}$/,
@@ -61,7 +82,7 @@ const validarCampo = (expresion, input, campo) => {
         document.querySelector(`#grupo__${campo} i`).classList.remove('fa-check-circle')
         document.querySelector(`#grupo__${campo} i`).classList.add('fa-times-circle')
         document.querySelector(`#grupo__${campo} .formularioRegistro__input-error`).classList.add('formularioRegistro__input-error-activo')
-        campo[false]
+        campo[campo] = false
     }
 }
 

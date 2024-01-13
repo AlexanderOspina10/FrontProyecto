@@ -37,7 +37,8 @@
         <h3 class="m-0 font-weight-bold text-primary">Editar pedido</h3>
     </div>
 
- <section class="checkout-wrapper section">
+
+   <section class="checkout-wrapper section">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
@@ -49,6 +50,14 @@
                             <section class="checkout-steps-form-content collapse show" id="collapseThree"
                                 aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                                 <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="single-form form-default">
+                                            <label for="mail">Documento</label>
+                                            <div class="form-input form">
+                                                <input type="text" placeholder="1007510458" id="documentoCliente" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="col-md-6">
                                         <div class="single-form form-default">
                                             <label for="mail">Nombre</label>
@@ -70,6 +79,14 @@
                                             <label for="mail">Telefono</label>
                                             <div class="form-input form">
                                                 <input type="text" placeholder="3135497455" id="TelefonoCliente" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                     <div class="col-md-6">
+                                        <div class="single-form form-default">
+                                            <label for="mail">Dirección</label>
+                                            <div class="form-input form">
+                                                <input type="email" placeholder="Calle 47 # 34 - 58" id="direccionCliente" readonly>
                                             </div>
                                         </div>
                                     </div>
@@ -105,6 +122,14 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="single-form form-default">
+                                            <label for="mail">Documento</label>
+                                            <div class="form-input form">
+                                                <input type="text" placeholder="1007510458" id="documentoBeneficiario" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="single-form form-default">
                                             <label >Nombre</label>
                                             <div class="form-input form">
                                                 <input type="text" placeholder="Yonier Alexander Ospina Hincapie" id="nombreBeneficiario" readonly>
@@ -129,6 +154,14 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="single-form form-default">
+                                            <label for="mail">Dirección</label>
+                                            <div class="form-input form">
+                                                <input type="email" placeholder="Calle 47 # 34 - 58" id="direccionBeneficiario" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="single-form form-default">
                                             <label>Estado</label>
                                             <div class="form-input form">
                                                 <input type="text" placeholder="ACTIVO" id="estadoBeneficiario" readonly>
@@ -144,7 +177,6 @@
         </div>
     </div>
 </section>
-
 
 <br>
 
@@ -194,40 +226,32 @@
             <div class="card-body">
                 <form class="formularioRegistro" id="formularioRegistro">
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="form-label" for="exampleFormControlSelect1">Beneficiario*</label>
-                                <select class="form-select" id="exampleFormControlSelect1" name="dia" required>
-                                    <option selected disabled="">Seleccione beneficiario</option>
-                                    <option>Yonier Alexander Ospina Hincapie</option>
-                                    <option>Alejandro Builes</option>
-                                    <option>Alejandro Mazo</option>
-                                    <option>Johany Ocampo</option>
-                                    <option>Juan Ortiz</option>
-                                    <option>Sebastian Giraldo DJ</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div>
-                                <br>
-                                <a href="formularioBeneficiario"><button type="button" class="btn btn-soft-info btn mt-2"><i
-                                            class="fa-solid fa-plus fa-lg"></i></button></a>
-                            </div>
-                        </div>
 
                         <!-- Inicio de bloque de servicios -->
                         <div class="col-md-12">
                             <div class="servicioContainer">
+
+                                <select id="selectBeneficiario" name="Beneficiario[]" class="form-control" style="width: 300px;" required>
+                                    <option selected disabled>Seleccionar beneficiario</option>
+                                    <option>Yonier Alexander Ospina Hincapie</option>
+                                    <option>Pedro Juan Ospina Hincapie</option>
+                                    <option>Alberto Sebas Ospina Hincapie</option>
+                                    
+                                </select>
+                                <div>
+                                    <a href="formularioBeneficiario"><button type="button" class="btn btn-soft-info btn mt-2"><i
+                                                class="fa-solid fa-plus fa-lg"></i> Beneficiario</button></a>
+                                </div>
+
                                 <select id="selectServicio" name="servicios[]" class="form-control" style="width: 300px;" required>
-                                    <option selected disabled>Agregar membresía al pedido</option>
+                                    <option selected disabled>Seleccinar membresia</option>
                                     <option value="servicio1">Membresía Premium</option>
                                     <option value="servicio2">Membresía Básica</option>
                                 </select>
 
                                 <div class="form-group formularioRegistro__grupo" id="grupo__cantidad">
-                                    <label for="cantidad" class="cantidad formularioRegistro__label">Cantidad:</label>
-                                    <input type="number" class="form-control" id="cantidad" name="cantidades[]" value="1" min="1" style="width: 90px;">
+                                    <label for="cantidadServicio" class="cantidad formularioRegistro__label">Cantidad:</label>
+                                    <input type="number" class="form-control" id="cantidadServicio" name="cantidades[]" value="1" min="1" style="width: 90px;">
                                     <i class="formularioRegistro__validacion-estado fas fa-times-circle"></i>
                                 </div>
 
@@ -265,7 +289,6 @@
 
 
 
-
 <!-- Productos Container -->
 <div class="card-header py-3 text-center">
     <h3 class="m-0 font-weight-bold text-primary">Productos</h3>
@@ -282,47 +305,23 @@
             <div class="card-body">
                 <form class="formularioRegistro2" id="formularioRegistro2">
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="form-label" for="exampleFormControlSelect1">Cliente*</label>
-                                <select class="form-select" id="exampleFormControlSelect1" name="dia">
-                                    <option selected disabled="">Seleccione cliente</option>
-                                    <option>Yonier Alexander Ospina Hincapie</option>
-                                    <option>Alejandro Builes</option>
-                                    <option>Alejandro Mazo</option>
-                                    <option>Johany Ocampo</option>
-                                    <option>Juan Ortiz</option>
-                                    <option>Sebastian Giraldo DJ</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div>
-                                <br>
-                                <a href="formularioCliente"><button type="button" class="btn btn-soft-info btn mt-2"><i
-                                            class="fa-solid fa-plus fa-lg"></i></button></a>
-                            </div>
-                        </div>
-
                         <!-- Inicio de bloque de productos -->
                         <div class="col-md-12">
                             <div class="productoContainer">
                                 <select id="selectProducto" name="productos[]" class="form-select">
-                                    <option selected disabled>Agregar productos al pedido</option>
+                                    <option selected disabled>Agregar producto al pedido</option>
                                     <option value="producto1">Creatina Monohidratada</option>
-                                    <option value="producto2">Aminoácidos</option>
-                                    <option value="producto3">Soda</option>
-                                    <option value="producto4">Gatorade</option>
+                                    <!-- Resto de las opciones de productos -->
                                 </select>
 
-                                <div class="form-group formularioRegistro2__grupo" id="grupo__cantidad">
-                                    <label for="cantidad" class="cantidad formularioRegistro2__label">Cantidad:</label>
-                                    <input type="number" class="form-control" name="cantidades[]" value="1" min="1" style="width: 90px;">
+                                <div class="form-group formularioRegistro2__grupo" id="grupo__cantidadProducto">
+                                    <label for="cantidadProducto" class="cantidad formularioRegistro2__label">Cantidad:</label>
+                                    <input type="number" id="cantidadProducto" class="form-control" name="cantidades[]" value="1" min="1" style="width: 90px;">
                                     <i class="formularioRegistro2__validacion-estado fas fa-times-circle"></i>
                                 </div>
 
-                                <div class="form-group formularioRegistro2__grupo" id="grupo__valor">
-                                    <label for="valor" class="cantidad formularioRegistro2__label">Valor:</label>
+                                <div class="form-group formularioRegistro2__grupo" id="grupo__valorProducto">
+                                    <label for="valorProducto" class="cantidad formularioRegistro2__label">Valor:</label>
                                     <input type="text" class="form-control" placeholder="250.000" style="width: 90px;" readonly>
                                 </div>
 
@@ -335,18 +334,8 @@
                             </div>
                         </div>
                         <!-- Fin de bloque de productos -->
-
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="form-group">
-                                    <br>
-                                    <label class="form-label">Valor total productos</label>
-                                    <input type="text" placeholder="$250.000" readonly/>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                    <button type="input" name="next" class="btn btn-primary next action-button float-end" value="Next">Guardar</button>
+                    <button type="submit" name="next" class="btn btn-primary next action-button float-end" value="Next">Guardar</button>
                 </form>
             </div>
         </div>
@@ -372,8 +361,8 @@
 
 
 <div class="d-flex justify-content-center">
-                    <a href="pedidos" class="me-2"><button type="button" class="btn btn-dark">Volver</button></a>
-                    <a href="editarPedido"><button type="button" value="submith" id="btn-enviar" class="btn btn-primary">Guardar</button></a>
+    <a href="pedidos" class="me-2"><button type="button" class="btn btn-dark">Volver</button></a>
+    <button type="button" onclick="mostrarMensajeExito()" class="btn btn-primary">Guardar</button>
 </div>
 
 

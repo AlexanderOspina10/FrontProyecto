@@ -31,7 +31,7 @@ const listarClientes = async() => {
             `<td  style="text-align: center;">
                                                     <div class="centered-container">
                                                     <i class="fa-regular fa-pen-to-square fa-xl me-2" onclick="abrirModalEditar('${objetoCliente}')"></i>
-                                                        <i class="fa-regular fa-eye fa-xl me-2"></i>
+                                                    <a href="detalleCliente"><i class="fa-regular fa-eye fa-xl me-2"></i></a>
                                                         <i class="fa-solid fa-trash fa-xl me-2 trash-icon" onclick="abrirModalEliminar('${objetoCliente}')"></i>
                                                         <div class="wrap-toggle" style="margin-top:10px;">
                                                             <input type="checkbox" id="toggle" class="offscreen" />

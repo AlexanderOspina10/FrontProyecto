@@ -149,28 +149,27 @@
 
             <div class="modal fade" id="editarpedidoModal" tabindex="-1" aria-labelledby="editarpedidoModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="m-0 font-weight-bold text-primary">Anular pedido</h3>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-               
-            <form action="">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 class="m-0 font-weight-bold text-primary">Anular pedido</h3>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form action="" id="anularPedidoForm">
                 <div class="alert alert-danger d-flex align-items-center" role="alert">
-                <svg class="bi flex-shrink-0 me-2" width="24" height="24">
-                <use xlink:href="#exclamation-triangle-fill" />
-                </svg>
-                <div>
-                ¿Seguro deseas anular el pedido?
-                </div>
+                    <svg class="bi flex-shrink-0 me-2" width="24" height="24">
+                        <use xlink:href="#exclamation-triangle-fill" />
+                    </svg>
+                    <div>
+                        ¿Seguro deseas anular el pedido?
                     </div>
-                    <button id="miBoton" type="submit" name="Guardar" class="btn btn-primary next action-button float-end" value="Next">Anular</button>
-                    <button type="button" class="btn btn-dark  previous action-button-previous float-end me-2" data-bs-dismiss="modal">Cancelar</button>
-            </form>     
+                </div>
+                <button id="miBoton" type="button" class="btn btn-primary next action-button float-end" onclick="anularPedido()">Anular</button>
+                <button type="button" class="btn btn-dark previous action-button-previous float-end me-2" data-bs-dismiss="modal">Cancelar</button>
+            </form>
         </div>
-            </div>
-        </div>
+    </div>
+</div>
     </div>
        </div>
         </div> 
@@ -198,6 +197,25 @@
     <footer class="footer">
         {{> copyright}}
     </footer>
+
+   <script>
+    function anularPedido() {
+        // Aquí puedes realizar las acciones necesarias para anular el pedido, por ejemplo, enviar una solicitud al servidor
+
+        // Después de anular el pedido con éxito, muestra la alerta
+        Swal.fire({
+            title: "¡Pedido anulado!",
+            text: "El pedido se ha anulado de manera correcta.",
+            icon: "success",
+            confirmButtonText: "Aceptar"
+        }).then((result) => {
+            // Recarga la página después de cerrar la alerta
+            if (result.isConfirmed) {
+                location.reload();
+            }
+        });
+    }
+</script>
     <!-- Footer Section End -->
 
     {{> footer}}
